@@ -1,0 +1,57 @@
+# Module 12 Report Template
+
+## Overview of the Analysis
+
+In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
+Give a brief description of the analysis you did for the machine learning models that this challenge employed in this part. This could consist of:
+
+Goal: We will determine customers' creditworthiness by utilizing a dataset of past lending activity from a peer-to-peer lending services provider.
+Financial details: The following parameters were present in the dataset: Interest rate and loan size Borrower earnings Debt against income Count of the accounts Negative symbols Total amount owed Loan status: We needed to determine if borrowers were high-risk loans (1 - Loan status) or healthy loans (0 - Loan status) in order to estimate their creditworthiness.
+Process: The first step is to load the dataset and divide it into "features (X)" and "labels (y)". Step 2 involves utilizing "train_test_split" to divide labels and features between test and train samples. Step 3: Use "LogisticRegression(solver='lbfgs', random_state=1)" to create a "classifier". Step 4: Examine the accuracy rating
+We repeated steps three and four while using the random over sampler to make our model better.
+
+## Results
+
+Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
+
+* Machine Learning Model 1:
+  precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00     18765
+           1       0.85      0.91      0.88       619
+
+    accuracy                           0.99     19384
+   macro avg       0.92      0.95      0.94     19384
+weighted avg       0.99      0.99      0.99     19384
+
+
+
+* Machine Learning Model 2:
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00     18765
+           1       0.84      0.99      0.91       619
+
+    accuracy                           0.99     19384
+   macro avg       0.92      0.99      0.95     19384
+weighted avg       0.99      0.99      0.99     19384
+
+## Summary
+
+Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
+The combined precision (accuracy) of both models is 99%.
+
+For class 1, Model 1 has a 91% recall rate and an 85% precision rate.
+For class 1, Model 2's recall is 99% and its precision is 84%.
+Both devices function admirably, with an astounding 99% accuracy rate for each. This demonstrates that both models produce correct predictions most of the time.
+
+Examining in further detail the outcomes for class 1, which might be a minority or a specific class of interest:
+Model 1 has a 91% recall and 85% precision. To put it simply, Model 1 predicts class 1 instances with an accuracy of 85%. Furthermore, it accurately records 91% of the real instances of class 1 in the dataset.
+Model 2, on the other hand, has a slightly lower precision of 84%, but compensates with an outstanding recall of 99%. This suggests that while Model 2 is adept at identifying most of the true instances of class 1, it is slightly more 
+prone to false positives compared to Model 1.
+Given these insights, the preferable model hinges on the specific requirements and the nature of the task at hand:
+If the primary objective is to ensure that the majority of true instances of class 1 are detected, even at the risk of some false positives, Model 2 stands out due to its exceptional recall.
+
+In contrast, Model 1 provides a pleasing combination of recall and precision if the goal is to maximize the identification of true positives while minimizing false positives.
+It would be wise to favor a model with higher precision for class 1 in situations where false positives could have serious consequences (such as in loan approvals, where granting loans to unqualified applicants could be expensive).
+In conclusion, the overall business objectives and the larger context should serve as the foundation for the decision between these models. Model 2 is the preferred option if capturing the greatest number of true positives is the main goal. On the other hand, Model 1 turns out to be more ideal for a more balanced strategy.
